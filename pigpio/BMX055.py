@@ -21,8 +21,8 @@ class bmx055:
 
     def stop(self):
         self.close(self.accel)
-#        self.close(self.comp)
-#        self.close(self.gyro)
+        self.close(self.comp)
+        self.close(self.gyro)
         self.pi.stop()
 
     def setup(self):
@@ -34,23 +34,23 @@ class bmx055:
         self.pi.i2c_write_byte_data(self.accel, 0x11, 0x00)
         sleep(0.1)
         
-#        self.gyro = self.open(self.gyro_addr) 
-#        self.pi.i2c_write_byte_data(self.gyro, 0x0f, 0x04)
-#        sleep(0.1)
-#        self.pi.i2c_write_byte_data(self.gyro, 0x10, 0x07)
-#        sleep(0.1)
-#        self.pi.i2c_write_byte_data(self.gyro, 0x11, 0x00)
-#        sleep(0.1)
+        self.gyro = self.open(self.gyro_addr) 
+        self.pi.i2c_write_byte_data(self.gyro, 0x0f, 0x04)
+        sleep(0.1)
+        self.pi.i2c_write_byte_data(self.gyro, 0x10, 0x07)
+        sleep(0.1)
+        self.pi.i2c_write_byte_data(self.gyro, 0x11, 0x00)
+        sleep(0.1)
 
-#        self.comp = self.open(self.comp_addr) 
-#        self.pi.i2c_write_byte_data(self.comp, 0x4b, 0x83)
-#        sleep(0.1)
-#        self.pi.i2c_write_byte_data(self.comp, 0x4b, 0x01)
-#        sleep(0.1)
-#        self.pi.i2c_write_byte_data(self.comp, 0x4c, 0x00)
-#        self.pi.i2c_write_byte_data(self.comp, 0x4e, 0x84)
-#        self.pi.i2c_write_byte_data(self.comp, 0x51, 0x04)
-#        self.pi.i2c_write_byte_data(self.comp, 0x52, 0x16)
+        self.comp = self.open(self.comp_addr) 
+        self.pi.i2c_write_byte_data(self.comp, 0x4b, 0x83)
+        sleep(0.1)
+        self.pi.i2c_write_byte_data(self.comp, 0x4b, 0x01)
+        sleep(0.1)
+        self.pi.i2c_write_byte_data(self.comp, 0x4c, 0x00)
+        self.pi.i2c_write_byte_data(self.comp, 0x4e, 0x84)
+        self.pi.i2c_write_byte_data(self.comp, 0x51, 0x04)
+        self.pi.i2c_write_byte_data(self.comp, 0x52, 0x16)
 
         sleep(0.3)
 

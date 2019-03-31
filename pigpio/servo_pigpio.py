@@ -11,11 +11,16 @@ from SERVO import SERVO
 sg92r = SERVO(12)
 
 try:
+    count = 0
     while True:
         for i in range(3, 14):
             sg92r.hpwm(50, i*10000)
             sleep(1)
+        count += 1
+        if count == 3:
+            break
 
+    sg92r.hpwm(50, 75000)
 
 #        sg92r.move(0)
 #        sg92r.hpwm(50, 30000)
