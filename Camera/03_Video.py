@@ -4,7 +4,8 @@ from time import strftime
 from time import sleep
 
 PAUSE_TIME = 10
-VIDEO_SAVE_DIR = '/home/pi/MyProjects/raspi/Camera/videos/'
+VIDEO_SAVE_DIR = '/home/pi/Videos/'
+#VIDEO_SAVE_DIR = '/home/pi/MyProjects/raspi/Camera/videos/'
 FILE_NAME_FMT = '%Y-%m-%d_%H-%M-%S'
 
 camera = PiCamera()
